@@ -10,8 +10,9 @@ app.set('port', process.env.PORT || 3000);
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.json()); // para que el servidor entienda formato json
-//rutas
 
+//rutas
+app.use('/api/empleados',require('./routes/empleados.routes'));
 
 //Empezando el servidor
 app.listen(app.get('port'), () => {
